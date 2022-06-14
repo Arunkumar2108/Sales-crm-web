@@ -1,0 +1,415 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variable";
+
+.todo-sidenav-container {
+    width: 220px;
+    height: 100%;
+    background-color: $white;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+    .todo-sidenav-content {
+        width: 100%;
+        height: 100%;
+        .ts-header {
+            width: 80%;
+            margin: 0px auto;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img {
+                width: 50px;
+                object-fit: contain;
+                font-weight: 600;
+                margin-left: 13%;
+            }
+            i {
+                font-size: 2rem;
+                color: gray;
+                cursor: pointer;
+            }
+        }
+
+        .ts-body {
+            width: 100%;
+            height:100% ;
+
+            .ts-body-scroller {
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+
+                .profile {
+                    position: absolute;
+                    left: 20px;
+                    bottom: 15px;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    img {
+                        width: 45px;
+                        height: 45px;
+                    }
+
+                    .tooltip-text {
+                        display: none;
+                        position: absolute;
+                        z-index: 1;
+                        left: 60px;
+                        bottom: 10px;
+                        background: #000;
+                        color: #fff;
+                        padding: 2px 4px;
+                        border-radius: 4px;
+                        white-space: nowrap;
+                    }
+
+                    .tooltip-text ::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        right: 100%;
+                        margin-top: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: transparent black transparent transparent;
+                    }
+
+                    img:hover ~ .tooltip-text {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .ts-lists {
+            width: 100%;
+            height: 100%;
+            padding: 30px 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 0;
+            h6 {
+                width: 80%;
+                margin-bottom: 15px;
+                color: gray;
+                font-size: 12px;
+            }
+
+            .ts-items {
+                width: 95%;
+                margin: 2px auto;
+                position: relative;
+                height: 45px;
+                min-height: 45px;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                background-color: transparent;
+                color: gray;
+                cursor: pointer;
+                text-decoration: none;
+                border-radius: 10px;
+                .icon-items {
+                    font-size: 1.1rem;
+                }
+                .items-text {
+                    font-size: 12px;
+                    margin: 0 1rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    white-space: nowrap;
+                }
+
+                &:hover {
+                    color: $color-primary;
+                    background-color: #f7f7f7;
+                    // padding: 2rem 0;
+                    // position: relative;
+                    // width: 70%;
+                    // align-items: center;
+                    // justify-content: center;
+                    // display: flex;
+                }
+                span {
+                    background-color: rgb(255, 129, 129);
+                    border-radius: 50%;
+                    width: 30px;
+                    // height: 30px;
+                    padding: 5px;
+                    font-size: 11px;
+                    color: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                // &:nth-last-child(1) {
+                //     border-bottom: 2px solid #f1f1f1;
+                // }
+
+                .tooltip {
+                    position: absolute;
+                    left: 322px;
+                    top: 50%;
+                    transform: translate(-50%);
+                    border-radius: 6px;
+                    width: 122px;
+                    height: 35px;
+                    background-color: #fff;
+                    margin: 0 5px;
+                    list-style: none;
+                    text-align: center;
+                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+                }
+                .help-hover-content {
+                    display: none;
+                    width: max-content;
+                    height: 35px;
+                    background-color: #2a2531;
+                    position: fixed;
+                    left: 90px;
+                    border-radius: 8px;
+                    z-index: 99;
+                    padding: 4px 14px;
+                    text-align: center;
+                    transition: 0.3s;
+                    .hover-text {
+                        font-size: 12px;
+                        color: var(--white);
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100%;
+                        i {
+                            font-size: 1.2rem;
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: -16px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border-top: 8px solid transparent;
+                        border-right: 8px solid #2a2531;
+                        border-left: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                    }
+                }
+            }
+
+            .active {
+                background-color: $color-primary;
+                // color: $color-primary;
+                color: #fff;
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+            .dropdown-container {
+                display: none;
+                background-color: #262626;
+                padding-left: 8px;
+            }
+
+            /* Optional: Style the caret down icon */
+            .fa-caret-down {
+                float: right;
+                padding-right: 8px;
+            }
+
+            //DropDown SideMeu
+            .open-dropdown-content {
+                width: 85%;
+                h4 {
+                    display: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $color-primary;
+                    width: 100%;
+                    margin: 0;
+                    padding: 1rem 0;
+                    text-align: center;
+                    border-bottom: 1px solid #eee;
+                }
+            }
+        }
+    }
+}
+.sidenavContainer.active {
+    // background-color: red;
+    width: 78px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    .ts-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        img {
+            display: none;
+        }
+    }
+    .ts-body {
+        .ts-lists {
+            h6 {
+                display: none;
+            }
+
+            .open-dropdown-content {
+                display: none;
+                width: 200px;
+                position: absolute;
+                left: 100%;
+                transition: 0.3s;
+                h4 {
+                    display: inline-block;
+                }
+            }
+
+            .active {
+                .items-text {
+                    left: 50px;
+                }
+            }
+            .ts-items {
+                position: relative;
+                width: 70%;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                .items-text {
+                    display: none;
+                }
+                .icon-items {
+                    font-size: 1.2rem;
+                }
+
+                span {
+                    display: none;
+                }
+                i#right-arrow {
+                    display: none;
+                }
+
+                &:hover .help-hover-content {
+                    display: inline-block;
+                }
+            }
+
+            .open-dropdown-content {
+                display: block;
+                background-color: #fff;
+                box-shadow: 0px 0px 12px #ddd;
+                border-radius: 8px;
+                margin-top: 100px;
+                margin-left: 10px;
+                overflow: scroll;
+                margin-bottom: 1rem;
+                max-height: 300px;
+                min-height: max-content;
+                z-index: 999;
+                .ts-items {
+                    width: 100%;
+                    justify-content: flex-start;
+                    margin: 0;
+                    height: auto;
+                    &:nth-last-child(1) {
+                        border-bottom: none;
+                    }
+                    .items-text {
+                        display: inline-block;
+                    }
+                }
+            }
+            .shift {
+                margin-top: 200px;
+            }
+            .time {
+                margin-top: 250px;
+            }
+            .standup {
+                margin-top: 350px;
+            }
+            .payment {
+                margin-top: 280px;
+            }
+        }
+        .footer-profile {
+            .footer-sidenav-content {
+                .footer-wrapper {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: contain;
+                        border-radius: 50%;
+                    }
+                    .text,
+                    .arrow {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+select {
+    border: transparent;
+    outline: transparent;
+    color: rgb(173, 173, 173);
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    margin: 0 10px;
+    font-size: smaller;
+}
+option {
+    color: rgb(173, 173, 173);
+    background-color: #f1f1f1;
+
+    &:hover {
+        background-color: skyblue;
+    }
+}
+#days {
+    display: flex;
+
+    justify-content: space-between;
+    button {
+        border: transparent;
+        background-color: transparent;
+        outline: transparent;
+
+        padding: 7px 0.7rem;
+        font-size: 0.7rem;
+        font-weight: bolder;
+        border-radius: 3px;
+        &:focus {
+            background-color: skyblue;
+        }
+    }
+}
+#Time {
+    display: flex;
+    width: 100%;
+}
+#btn {
+    margin: 0 !important;
+}
+
+i#right-arrow {
+    position: absolute;
+    right: 3px;
+}

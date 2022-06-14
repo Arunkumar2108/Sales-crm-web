@@ -1,0 +1,42 @@
+// Custom Colour Variables
+$primary: teal;
+
+// Bootstrap Colours
+// $theme-colors: (
+//     "primary": #3d8dfc,
+//     "secondary": #83c5be,
+//     "danger": #f64e60,
+//     "success": #5fc04e,
+//     "info": #ffa800,
+// );
+
+// body {
+//     background-color: #f5f8ff;
+// }
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+//TODO: Custom Style
+
+@import "./styles/mixins";
+@import "./styles/variable";
+@import "../src/__template__/style/BaseCode";
+@import "../src/__template__/style/confirmModal";
+@import "../src/__template__/style/utility";
+
+//global Custom Styles
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");

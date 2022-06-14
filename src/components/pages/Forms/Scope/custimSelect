@@ -1,0 +1,35 @@
+import React from 'react'
+import Select from 'react-select'
+
+
+const customStyles = {
+    menu: (provided, state) => ({
+      ...provided,
+      width: state.selectProps.width,
+      borderBottom: '1px dotted blue  ',
+      color: state.selectProps.menuColor,
+      padding: 5,
+      width: '200px' ,
+      backgroundColor:'transparent'
+    }),
+  
+    control: (_, { selectProps: { width }}) => ({
+      width: 200,
+    }),
+    
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 0.3s';
+  
+      return { ...provided, opacity, transition };
+    }
+  }
+
+
+function CustomSelect({style,label,options,onChange,defaultValue,isMulti}){
+    return <div style={style}>
+        <Select menuColor="blue" classNamePrefix="mySelect" styles={customStyles}  isMulti={isMulti} options={options} onChange={onChange} defaultValue={defaultValue}/>
+    </div>
+}
+
+export default CustomSelect;

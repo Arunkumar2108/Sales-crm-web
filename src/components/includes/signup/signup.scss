@@ -1,0 +1,227 @@
+.signin-container{
+    width: 100%;
+    height: 100vh;
+    // background-color: #f1f1f1;
+    display: flex;
+
+    .left-container{
+        width: 50% ;
+        height: 100%;
+        float: left;
+        // background-color: #f7f7f7;
+        background-image: linear-gradient(to right, #f1f1f1 ,  #fff);
+        // background-color: yellow;
+
+        .left-content-container{
+            width: 70% ;
+            height: 100%;
+            margin: 0% 0 0 16%;
+            // background-color: #f7f7f7;
+
+            .logo-container{
+                text-align: center;
+
+                img{
+                    width: 200px;
+                }
+            }
+
+            .input-fields-name{
+                margin: 0 9% 0 8%;
+                width: 80%;
+                display: flex;
+                // justify-content: space-evenly;
+
+                label{
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin: 10px 0;
+                    
+                    }
+
+                .first-name{
+                    // display: block;
+                    // justify-content: flex-start;
+                }
+
+                .last-name{
+                    margin-left: 11%;
+                }
+                input{
+                    width: 100%;
+                    align-items: center;
+                    height: 40px;
+                    outline: none;
+                    border: 1px solid #e1e1e1;
+                    // background-color: #f9f9f9;
+                    border-radius: 8px;
+                    padding: 0 13px;
+                    font-size: 13px;
+
+                    &::-webkit-input-placeholder {
+                        font-size: 11px;
+                        color: rgb(173, 173, 173);
+                    }
+                }
+            }
+
+            .input-fields{
+                margin: 0 8%;
+                position: relative;
+
+                label{
+                font-size: 14px;
+                font-weight: 500;
+                margin: 10px 0;
+                }
+
+                input{
+                    width: 95%;
+                    align-items: center;
+                    height: 40px;
+                    outline: none;
+                    border: 1px solid #e1e1e1;
+                    // background-color: #f9f9f9;
+                    border-radius: 8px;
+                    padding: 0 13px;
+                    font-size: 13px;
+                            
+                    &::-webkit-input-placeholder {
+                        font-size: 11px;
+                        color: rgb(173, 173, 173);
+                    }
+                }
+                .showpswd{
+                    cursor: pointer;
+                    position: absolute;
+                    top: 61%;
+                    right: 8%;
+
+                    .fa-eye-slash,.fa-eye{
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: rgb(189, 187, 187);
+                    }
+                }
+                .select-container{
+                    width: 95%;
+                    .css-319lph-ValueContainer{
+                        cursor: pointer;
+                        font-size: 14px;
+                        height: 35px;
+                        border-radius: 8px;
+
+                        .css-14el2xx-placeholder{
+                            font-size: 13px;
+                            color: rgb(173, 173, 173);
+                        }
+
+                        .css-6j8wv5-Input{
+                            padding: 0;
+                            margin: 0;
+                        }
+                    }
+                    .css-tlfecz-indicatorContainer{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .policy-container{
+                width: 80%;
+                align-items: center;
+                position: relative;
+                margin: 3% 8% 0 8%;
+
+                input{
+                    cursor: pointer;
+                }
+                label{
+                    position: absolute;
+                    font-size: 13px;
+                    top: 2px;
+                    // margin: 0 0 9% 0;
+
+                    span{
+                        cursor: pointer;
+                        color: blue;
+                    }
+                }
+            }
+        }
+        .submit-btn{
+            margin: 6% 20% 0 20%;
+            padding-bottom: 4%;
+            
+            button{
+                margin: 0 22%;
+                width: 40%;
+                border: none;
+                outline: none;
+                background: #6767e6;
+                color: #fff;
+                padding: 2% 3%;
+                border-radius: 3px;
+            }
+        }
+    }
+    .right-container{
+        width: 50%;
+        float: right;
+        // background-color: lightcoral;
+
+        img{
+            width: 75vh;
+            margin: 30% 0 0 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .signin-container{
+        .left-container{
+            width: 100%;
+
+            .left-content-container{
+
+                .input-fields-name{
+                    display: block;
+
+                    .last-name{
+                        margin-left: 0;
+                    }
+                    input{
+                        width: 100%;
+                    }
+                }
+                .submit-btn{
+                    margin: 15% 5%;
+                    // position: absolute;
+                    width: 100%;
+                }
+            }
+        }
+        .right-container{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 950px){
+    .signin-container{
+        .left-container{
+            // width: 100%;
+
+            .left-content-container{
+                width: 80%;
+
+                .submit-btn{
+                    margin: 15% 3%;
+                    width: 100%;
+                }
+            }
+        }
+        .right-container{
+
+        }
+    }
+}

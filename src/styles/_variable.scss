@@ -1,0 +1,23 @@
+$color-primary: #6767e6;
+$color-secondary: #0057ff;
+$color-lightBg: #f2f2ff;
+$text-title: #3c4043;
+$text-dark: #3c4043;
+$text-light: #7d8083;
+$text-ultralight: #b5b5c3;
+
+$table-header: #cbd8e8;
+$icon-color: #7c8392;
+
+$white: #fff;
+$black: #000;
+$gray: gray;
+
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $black; // Lighter color, return black
+  } @else {
+    @return $white; // Darker color, return white
+  }
+}
+

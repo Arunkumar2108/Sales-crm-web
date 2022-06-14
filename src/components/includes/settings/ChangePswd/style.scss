@@ -1,0 +1,203 @@
+// @import "../../../styles/mixins";
+// @import "../../../styles/variable";
+
+.changepassword-container{
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    // display: flex;
+.right-container{
+    // width: 60%;
+    // float: right;
+    // background-color: red;
+    // position: relative;
+    // background-color: yellow;
+
+    img{
+        margin: 14% 0 0 7%;
+        // background-color: orange;
+        width: 75% ;
+        height: 63%;
+
+
+    }
+}
+
+.leftpswd-container{
+    // width: 40%;
+    // float:left ;
+    // background-color: orange;
+
+    .upper-img{
+        width: 100px;
+        // margin: 10px 10px 10px 20%;
+        // position: absolute;
+        // overflow: hidden;
+        // top: -29px;
+    }
+    .left-content-container{
+        position: relative;
+        // background-color: red;
+        margin: 0% 0 0 35%;
+
+
+        .input-container{
+            margin: 4% 0 0 0;
+
+            .input-fileds{
+                margin: 10px 0;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin: 10px 0;
+                }
+
+                input{
+                    width: 40%;
+                    height: 40px;
+                    outline: none;
+                    border: none;
+                    background-color: #f7f7f7;
+                    box-shadow: 1px 1px 1px 1px rgb(199, 198, 198);
+                    border-radius: 8px;
+                    padding: 0 13px;
+                    font-size: 13px;
+
+                    &:invalid ~ p{
+                        display: block;
+                        color: red;
+                        font-size: 14px;
+                        margin: 4px 0 0 0;
+                    }
+                }
+                p{
+                    display: none;
+                }
+                .showpswd{
+                    cursor: pointer;
+                    position: absolute;
+                    top: 63%;
+                    left: 35%;
+
+                    .fa-eye-slash,.fa-eye{
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: rgb(189, 187, 187);
+                    }
+                }
+            }
+            .submit{
+                cursor: pointer;
+                padding: 0 0 0 15%;
+                width: 50px;
+                height: 50px;
+
+                .bxs-right-arrow-circle{
+                    // width: 50px;
+                    font-size: 50px;
+                    padding: 2px 9px;
+                    // background: #fff;
+                    color: #6767e6;
+                    cursor: pointer;
+                    transition: .1s ease-in-out;
+
+                    &:hover{
+                        color: #7070f9;
+                    }
+                }
+            }
+        }   
+    }
+}
+}
+@media only screen and (max-width: 678px) { 
+    .changepassword-container{
+        .left-container{
+            width: 100%;
+            // background-color: red;
+            
+            .left-content-container{
+                margin-left: 18%;
+            .input-container .input-fileds{
+                margin: 10px 23px;
+             input{
+                width: 80%;
+                height: 35px;
+            }
+        }
+    }
+    }
+        .right-container{
+            // width: 0;
+            display: none;
+        }
+    }
+}
+@media only screen and (min-width: 678px) and (max-width: 900px) {
+    .changepassword-container{
+        .left-container{
+            width: 50%;
+            // background-color: blue;
+            .left-content-container .input-container .input-fileds{
+                .showpswd{
+                    // right: 7%;
+                }
+                input{
+                    // width: 100%;
+                    height: 35px;
+                }
+            }
+        }
+        .right-container{
+                width: 50%;
+            img{
+                margin: 35% 0 0 7%;
+                width: 79% ;
+                height:300px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) { 
+    .changepassword-container{
+        .left-container{
+            .left-content-container{
+                margin: 26% 0 0 25%;
+
+                .input-container .input-fileds{
+                    margin: 10px 3px;
+                }
+            }
+        }
+        .right-container{
+            img{
+                margin-top: 40%;
+                width: 75%;
+                height: 45%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1800px) { 
+    .changepassword-container{
+        .left-container{
+            .left-content-container{
+                margin: 23% 0 0 25%;
+            }
+        }
+        .right-container{
+            img{
+                // margin-top: 30%;
+                width: 75%;
+                height: 500px;
+            }
+        }
+    }
+}
+

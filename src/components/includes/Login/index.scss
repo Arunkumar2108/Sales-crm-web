@@ -1,0 +1,293 @@
+.login-page-container{
+    width: 100%;
+    height: 100vh;
+    // background-color: #f1f1f1;
+    display: flex;
+
+    .left-container{
+        width: 50%;
+        float: left;
+
+        .left-content-container{
+            width: 45%;
+            margin: 15% 10% 0 20%;
+            // background-color: palegoldenrod;
+
+            .logo-container{
+                text-align: center;
+
+                img{
+                    width: 200px;
+                }
+            }
+            .greeting-container{
+                text-align: center;
+                h3{
+                    font-weight: 600;
+                }
+            }
+            .integration-icons{
+                margin: 5% 24%;
+                text-align: center;
+                justify-content: space-between;
+                // background-color: red;
+
+                .google-icon, .microsoft-icon, .linkedin-icon, .github-icon{
+                    margin-right: 5px;
+                    padding: 0 3%;
+                    cursor: pointer;
+                    border-radius: 30%;
+                    // box-shadow: .5px .5px .5px rgb(199, 198, 198);
+                    background-color: #f3f3f3;
+                }
+            }
+            .hr-container{
+                .hr-text {
+                    font-size: 13px;
+                    line-height: 1em;
+                    position: relative;
+                    outline: 0;
+                    border: 0;
+                    color: black;
+                    text-align: center;
+                    height: 1em;
+                    opacity: .5;
+                    margin: 11% 0;
+
+                    &:before {
+                      content: '';
+                      background: linear-gradient(to right, transparent, #818078, transparent);
+                      position: absolute;
+                      left: 0;
+                      top: 50%;
+                      width: 100%;
+                      height: 1px;
+                    }
+                    &:after {
+                      content: attr(data-content);
+                      position: relative;
+                      display: inline-block;
+                      color: black;
+                      padding: 0 .5em;
+                      line-height: 1em;
+                      color: #818078;
+                      background-color: #f1f1f1;
+                    }
+                }
+            }
+            .input-fields{
+                // display: flex;
+                position: relative;
+                flex-direction: row;
+                margin-top: 150px;
+
+                input{
+                    display: block;
+                    width: 100%;
+                    height: 40px;
+                    outline: none;
+                    border: none;
+                    background-color: #f7f7f7;
+                    box-shadow: 1px 1px rgb(199, 198, 198);
+                    border-radius: 3px;
+                    padding: 0 13px;
+                    font-size: 13px;
+                }
+                .showpswd{
+                    cursor: pointer;
+                    position: absolute;
+                    top: 69%;
+                    right: 3%;
+
+                    .fa-eye-slash,.fa-eye{
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: rgb(189, 187, 187);
+                    }
+                }
+            }
+            .forgetpswd{
+                display: flex;
+                flex-direction: row;
+                margin:2.5% 0 7% 0;
+                justify-content: space-between;
+                font-size: 12px;
+                position: relative;
+
+                .checkbox-container{
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                    width: 170px;
+                    // background-color: orange;
+
+                    input[type="checkbox"] + label{
+                        margin:2.5% 5px 2.5% 0;
+                        cursor: pointer;
+                    }
+                    input[type="checkbox"]{
+                        cursor: pointer;
+                    }
+            
+                    label{
+                        position: absolute;
+                        left: 9%;
+                    }
+                }
+                p{
+                    margin: 2.5% 0;
+                    color: blue;
+                    cursor: pointer;
+                }
+            }
+            .login-btn{
+                button{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    background: #6767e6;
+                    color: #fff;
+                    padding: 2% 3%;
+                    border-radius: 3px;
+                }
+            }
+            .hr-container-down{
+                .hr-text {
+                    font-size: 13px;
+                    line-height: 1em;
+                    position: relative;
+                    outline: 0;
+                    border: 0;
+                    color: black;
+                    text-align: center;
+                    height: 1.5em;
+                    opacity: .5;
+
+                    &:before {
+                      content: '';
+                      background: linear-gradient(to right, transparent, #818078, transparent);
+                      position: absolute;
+                      left: 0;
+                      top: 50%;
+                      width: 100%;
+                      height: 1px;
+                    }
+                    &:after {
+                      content: attr(data-content);
+                      position: relative;
+                      display: inline-block;
+                      color: black;
+                      padding: 0 .5em;
+                      line-height: 1.5em;
+                      color: #818078;
+                      background-color: #f1f1f1;
+                    }
+                }
+            }
+            .redirect-txt{
+                font-size: 14px;
+                text-align: center;
+
+                span{
+                    // margin-left: 2%;
+                    cursor: pointer;
+                    color: blue;
+                }
+            }
+        }
+    }
+    .right-container{
+        width: 50%;
+        float: right;
+        // background-color: red;
+
+        img{
+            width: 100%;
+            margin: 15% 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .login-page-container{
+        // margin: auto;
+
+        .left-container{
+            // background-color: blue;
+            width: 100%;
+
+            .left-content-container{
+                width: 65%;
+                margin: auto;
+
+                .greeting-container{
+                    margin: auto;
+                }
+                .integration-icons{
+                    font-size: 36px;
+                    margin: auto;
+
+                    .google-icon, .microsoft-icon, .linkedin-icon, .github-icon{
+                        padding: 0 2%
+                    }
+                }
+                .input-fields{
+                    margin: auto;
+                }
+            }            
+        }
+        .right-container{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1070px){
+    .login-page-container{
+        // margin: auto;
+
+        .left-container{
+            // background-color: blue;
+            // width: 100%;
+
+            .left-content-container{
+                width: 90%;
+                margin: auto;
+
+                .integration-icons{
+                    margin: auto;
+
+                    .google-icon, .microsoft-icon, .linkedin-icon, .github-icon{
+                        padding: 0 1%;
+                    }
+                }
+            }
+        }
+        .right-container{
+
+            img{
+                margin: 30% 0;
+                width: 100%;
+                height: 50vh;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1400px){
+    .login-page-container{
+        .left-container{
+
+            .left-content-container{
+
+                .integration-icons{
+                    margin: auto;
+
+                    .google-icon, .microsoft-icon, .linkedin-icon, .github-icon{
+                        padding: 0 1%;
+                    }
+                }
+            }
+        }
+    }
+}

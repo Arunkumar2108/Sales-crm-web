@@ -1,0 +1,35 @@
+[
+    {
+        "_id": "612cf0874095ce4c4869fab1",
+        "compname": "H&H",
+        "domain": "Agent",
+        "description": "hnhagent@gmail.com",
+        "contactno": "+918999929222",
+        "banner": "Manager",
+        "compcode": "+918999929223",
+        "industry": "Manager",
+        "address": "+918999929223"
+    },
+    {
+        "_id": "6139b7040695b731a005d87f",
+        "compname": "Test Agent",
+        "domain": "Test",
+        "description": "testagn@gmaill.com",
+        "contactno": "+918989899889",
+        "banner": "Team Lead",
+        "compcode": "+918989899913",
+        "industry": "Manager",
+        "address": "+918999929223"
+    },
+    {
+        "_id": "615952624e36326a8d232c8f",
+        "compname": "Munaf",
+        "domain": "Shanawaz H",
+        "description": "munaf@hnhmena.com",
+        "contactno": "+919989892929",
+        "banner": "QA",
+        "compcode": "+919222929899",
+        "industry": "Manager",
+        "address": "+918999929223"
+    }
+]
